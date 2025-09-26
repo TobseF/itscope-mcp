@@ -1,10 +1,13 @@
 plugins {
-	kotlin("jvm") version "1.9.25"
-	kotlin("plugin.spring") version "1.9.25"
-	id("org.springframework.boot") version "3.5.6"
+    kotlin("jvm") version "2.2.20"
+    kotlin("plugin.spring") version "2.2.20"
+    kotlin("plugin.serialization") version "2.2.0"
+    id("org.springframework.boot") version "3.5.6"
 	id("io.spring.dependency-management") version "1.1.7"
-	id("org.graalvm.buildtools.native") version "0.10.6"
+    //id("org.graalvm.buildtools.native") version "0.10.6"
 }
+val koogVersion = "0.4.2"
+
 
 group = "de.itscope.ai"
 version = "0.0.1-SNAPSHOT"
@@ -34,6 +37,8 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.springframework.modulith:spring-modulith-starter-core")
+    //implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
+    implementation("ai.koog:koog-spring-boot-starter:${koogVersion}")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	developmentOnly("org.springframework.boot:spring-boot-docker-compose")
 	runtimeOnly("org.springframework.modulith:spring-modulith-actuator")
